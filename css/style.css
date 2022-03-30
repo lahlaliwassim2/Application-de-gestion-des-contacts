@@ -1,0 +1,7 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: darkgray;
+}
+.navbar{background-color:rgb(43, 43, 43);}
