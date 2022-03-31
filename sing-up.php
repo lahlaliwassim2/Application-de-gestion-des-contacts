@@ -22,16 +22,21 @@ include'composants/navbar.php';
     
   </div>
 
+  <div class="form-outline mb-4">
+  <label class="form-label" for="form2Example2">Password verify</label>
+ <input type="password" id="form2Example2" class="form-control" />
+    
+  </div>
  
   
 
   <!-- Submit button -->
-  <button type="button" class="btn btn-primary btn-block mb-4">Login</button>
+  <button type="button" class="btn btn-primary btn-block mb-4">Sing up</button>
 
   <!-- Register buttons -->
   <div class="text-center">
-    <p>Not accont? <a href="#!">Sing up </a> here</p>
-    <p>or Login  with:</p>
+    <p>Already have an accont? <a href="">Login </a> here</p>
+    <p>or sign up with:</p>
     <button type="button" class="btn btn-link btn-floating mx-1">
       <i class="fab fa-facebook-f"></i>
     </button>
