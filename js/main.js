@@ -1,57 +1,58 @@
+let Name = document.getElementById("name");
+let Password = document.getElementById("passw");
+let confpas = document.getElementById("confpas");
+let Submit= document.getElementById("btn");
+let erorN = document.getElementById("erorN");
+let erorP = document.getElementById("erorP");
+let erorPP = document.getElementById("erorPP");
+let Usn1 = document.getElementById("Usn1");
+let bttn = document.getElementById("bttn");
+let pssw = document.getElementById("pssw");
+// console.log("wassim");
 
-// -----------------------functions for progress and nbr questions ---------------------
-let prog = 0;
-let nbrQues = 1;
-if(nbrQues == 1){
-    document.querySelector(".btn-prv").style.visibility = "hidden";
+Submit.addEventListener("click", (e) =>{
+    console.log("wazds");
+if(Name.value==""){
+        e.preventDefault();
+        Name.setAttribute("style","color:red;border:1px solid red ");
+        console.log("fsgsrfgh");
+        erorN.innerHTML="entrer votre nom";
+        erorN.setAttribute("style","color:red");
+       
 }
-document.querySelector(".btn-next").addEventListener("click",()=>{
-    if(prog <100){
-        prog += 4.55;
-        nbrQues++;
-        if(nbrQues == 23){
-            document.querySelector(".btn-next").classList.add("d-none");
-            document.querySelector(".btn-ter").classList.remove("d-none");
-        }
-        document.querySelector(".progress-bar").style.width = prog+"%";
-        document.querySelector(".nbr-Q").innerHTML = nbrQues +"/23";
-        document.querySelector(".btn-prv").style.visibility = "visible";
+else{
+    Name.setAttribute("style","color:green");
+    erorN.innerHTML="";
+   
+}
+})
+Submit.addEventListener("click", (e)=>{
+    if(Password.value==""){
+        Password.setAttribute("style","color:red;border:1px solid red ");
+        erorP.innerHTML="entrer votre password";
+        erorP.setAttribute("style","color:red");
+    }
+    else{
+        Password.setAttribute("style","color:green");
+        erorP.innerHTML="";
+        
     }
 })
-document.querySelector(".btn-prv").addEventListener("click",()=>{
-    if(prog>0){
-        prog -= 4.55;
-        nbrQues--;
-        if(nbrQues == 1){
-            document.querySelector(".btn-prv").style.visibility = "hidden";
-        }
-        document.querySelector(".progress-bar").style.width = prog+"%";
-        document.querySelector(".nbr-Q").innerHTML = nbrQues+"/23";
+Submit.addEventListener("click",(e)=>{
+    if(confpas.value==""){
+        confpas.setAttribute("style","color:red;border:1px solid red ");
+        erorPP.innerHTML="remplire le champ "
+        erorPP.setAttribute("style","color:red");
+    }
+    else{
+        confpas.setAttribute("style","color:green");
+        erorPP.innerHTML="";
+    }
 
-        document.querySelector(".btn-next").classList.remove("d-none");
-            document.querySelector(".btn-ter").classList.add("d-none");
+})
+bttn.addEventListener("click",(e)=>{
+    console.log("sssss");
+    if(Usn1.value==""){
+        Usn1.setAttribute("style","color:red;border:1px solid red")
     }
 })
-
-// -----------------------functions for progress and nbr questions ---------------------
-
-//---------------------------------- functions for check button -----------------------------
-let btnCheck = document.querySelectorAll(".check");
-
-btnCheck.forEach(btn => {
-    btn.addEventListener("click",()=>{
-        if(document.querySelector(".oui").className.includes("active-check")){
-            document.querySelector(".oui").classList.remove("active-check");
-            document.querySelector(".non").classList.add("active-check");
-        }
-        else if(document.querySelector(".non").className.includes("active-check")){
-            document.querySelector(".non").classList.remove("active-check");
-            document.querySelector(".oui").classList.add("active-check");
-        }
-        else{
-            btn.classList.add("active-check");
-        }
-    })
-});
-
-//---------------------------------- functions for check button -----------------------------
